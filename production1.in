@@ -1,0 +1,13 @@
+production1 pled
+ &cntrl
+  imin=0,irest=1,ntx=5,
+  nstlim=25000000,dt=0.002,
+  ntc=2,ntf=2,
+  ntwr=100000,
+  cut=8.0, ntb=2, ntp=1, barostat=2, tautp=10.0,
+  ntpr=5000, ntwx=5000, iwrap=1,
+  ntt=1, 
+  temp0=310.15
+ /
+ 
+ 
