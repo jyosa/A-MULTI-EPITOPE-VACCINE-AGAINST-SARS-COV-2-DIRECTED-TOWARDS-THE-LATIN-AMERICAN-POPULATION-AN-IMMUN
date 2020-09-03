@@ -1,0 +1,123 @@
+
+PART I.
+
+Full code to run in NetMHCpan 4.0 | | HLA Class 1 binding prediccion.
+*Commands of interest in NetMHCpan 4.0. 
+
+[-a line]            HLA-A02:01           HLA allele
+[-f filename]                             File name with input
+[-l string]          8,9,10,11            Peptide length [8-11] (multiple length with ,)
+[-inptype int]       0                    Input type [0] FASTA [1] Peptide
+[-BA]                0                    Make Binding affinity prediction
+
+*Dataset required:
+postalligmentproteins.faa <- Holds all non redundant and conserved sequences  from alignment of all SARS-CoV-2 proteomes utilized. Results obtained from MAFFT multiple sequence alignment program.
+
+Full code:
+
+../netMHCpan -a HLA-A01:01,HLA-A01:02,HLA-A02:01,HLA-A02:02,HLA-A02:04,HLA-A02:05,HLA-A02:06,HLA-A02:11,HLA-A02:12,HLA-A02:13,HLA-A02:17,HLA-A02:19,HLA-A02:22,HLA-A02:24,HLA-A03:01,HLA-A11:01,HLA-A23:01,HLA-A24:02,HLA-A24:03,HLA-A24:06,HLA-A24:14,HLA-A25:01,HLA-A26:01,HLA-A29:01,HLA-A29:02,HLA-A30:01,HLA-A30:02,HLA-A31:01,HLA-A31:12,HLA-A32:01,HLA-A33:01,HLA-A33:03,HLA-A33:18,HLA-A34:02,HLA-A36:01,HLA-A66:01,HLA-A66:02,HLA-A68:01,HLA-A68:02,HLA-A68:03,HLA-A68:05,HLA-A68:06,HLA-A68:23,HLA-A68:30,HLA-A74:01,HLA-B07:02,HLA-B07:08,HLA-B07:14,HLA-B07:96,HLA-B08:01,HLA-B08:05,HLA-B08:50,HLA-B13:02,HLA-B14:01,HLA-B14:02,HLA-B14:11,HLA-B15:01,HLA-B15:02,HLA-B15:03,HLA-B15:04,HLA-B15:05,HLA-B15:07,HLA-B15:08,HLA-B15:09,HLA-B15:10,HLA-B15:15,HLA-B15:16,HLA-B15:17,HLA-B15:20,HLA-B15:30,HLA-B15:31,HLA-B15:47,HLA-B18:01,HLA-B18:05,HLA-B27:02,HLA-B27:03,HLA-B27:05,HLA-B35:01,HLA-B35:02,HLA-B35:03,HLA-B35:04,HLA-B35:05,HLA-B35:06,HLA-B35:12,HLA-B35:14,HLA-B35:17,HLA-B35:18,HLA-B35:19,HLA-B35:20,HLA-B35:21,HLA-B35:23,HLA-B35:24,HLA-B35:30,HLA-B35:31,HLA-B35:43,HLA-B35:44,HLA-B35:68,HLA-B37:01,HLA-B38:01,HLA-B39:01,HLA-B39:02,HLA-B39:03,HLA-B39:04,HLA-B39:05,HLA-B39:06,HLA-B39:08,HLA-B39:09,HLA-B39:11,HLA-B39:12,HLA-B39:13,HLA-B40:01,HLA-B40:02,HLA-B40:03,HLA-B40:04,HLA-B40:05,HLA-B40:08,HLA-B40:09,HLA-B40:10,HLA-B40:11,HLA-B40:16,HLA-B40:89,HLA-B41:01,HLA-B41:02,HLA-B42:01,HLA-B42:02,HLA-B44:02,HLA-B44:03,HLA-B44:11,HLA-B44:45,HLA-B45:01,HLA-B48:01,HLA-B48:03,HLA-B49:01,HLA-B50:01,HLA-B51:01,HLA-B51:08,HLA-B51:10,HLA-B51:24,HLA-B51:46,HLA-B52:01,HLA-B53:01,HLA-B56:02,HLA-B57:01,HLA-B57:03,HLA-B58:01,HLA-B58:02,HLA-B78:02,HLA-B81:01,HLA-B82:01,HLA-C01:02,HLA-C01:06,HLA-C02:02,HLA-C02:10,HLA-C03:02,HLA-C03:03,HLA-C03:04,HLA-C03:05,HLA-C04:01,HLA-C04:03,HLA-C04:15,HLA-C05:01,HLA-C06:02,HLA-C07:01,HLA-C07:02,HLA-C07:05,HLA-C08:01,HLA-C08:02,HLA-C08:03,HLA-C12:03,HLA-C14:02,HLA-C15:02,HLA-C15:03,HLA-C15:05,HLA-C15:09,HLA-C16:01,HLA-C16:02,HLA-C17:01 -f postalligmentproteins.faa -l 9 -inptype 0 -BA > HLA1NetMHCprediction.
+
+
+
+
+1. The enterly code must be divided in two parts for running.
+Part a)
+
+../netMHCpan -a HLA-B35:23,HLA-B35:24,HLA-B35:30,HLA-B35:31,HLA-B35:43,HLA-B35:44,HLA-B35:68,HLA-B37:01,HLA-B38:01,HLA-B39:01,HLA-B39:02,HLA-B39:03,HLA-B39:04,HLA-B39:05,HLA-B39:06,HLA-B39:08,HLA-B39:09,HLA-B39:11,HLA-B39:12,HLA-B39:13,HLA-B40:01,HLA-B40:02,HLA-B40:03,HLA-B40:04,HLA-B40:05,HLA-B40:08,HLA-B40:09,HLA-B40:10,HLA-B40:11,HLA-B40:16,HLA-B40:89,HLA-B41:01,HLA-B41:02,HLA-B42:01,HLA-B42:02,HLA-B44:02,HLA-B44:03,HLA-B44:11,HLA-B44:45,HLA-B45:01,HLA-B48:01,HLA-B48:03,HLA-B49:01,HLA-B50:01,HLA-B51:01,HLA-B51:08,HLA-B51:10,HLA-B51:24,HLA-B51:46,HLA-B52:01,HLA-B53:01,HLA-B56:02,HLA-B57:01,HLA-B57:03,HLA-B58:01,HLA-B58:02,HLA-B78:02,HLA-B81:01,HLA-B82:01,HLA-C01:02,HLA-C01:06,HLA-C02:02,HLA-C02:10,HLA-C03:02,HLA-C03:03,HLA-C03:04,HLA-C03:05,HLA-C04:01,HLA-C04:03,HLA-C04:15,HLA-C05:01,HLA-C06:02,HLA-C07:01,HLA-C07:02,HLA-C07:05,HLA-C08:01,HLA-C08:02,HLA-C08:03,HLA-C12:03,HLA-C14:02,HLA-C15:02,HLA-C15:03,HLA-C15:05,HLA-C15:09,HLA-C16:01,HLA-C16:02,HLA-C17:01 -f postalligmentproteins.faa -l 9 -inptype 0 -BA > HLA1NetMHCprediction1
+
+Part b)
+
+../netMHCpan -a HLA-A01:01,HLA-A01:02,HLA-A02:01,HLA-A02:02,HLA-A02:04,HLA-A02:05,HLA-A02:06,HLA-A02:11,HLA-A02:12,HLA-A02:13,HLA-A02:17,HLA-A02:19,HLA-A02:22,HLA-A02:24,HLA-A03:01,HLA-A11:01,HLA-A23:01,HLA-A24:02,HLA-A24:03,HLA-A24:06,HLA-A24:14,HLA-A25:01,HLA-A26:01,HLA-A29:01,HLA-A29:02,HLA-A30:01,HLA-A30:02,HLA-A31:01,HLA-A31:12,HLA-A32:01,HLA-A33:01,HLA-A33:03,HLA-A33:18,HLA-A34:02,HLA-A36:01,HLA-A66:01,HLA-A66:02,HLA-A68:01,HLA-A68:02,HLA-A68:03,HLA-A68:05,HLA-A68:06,HLA-A68:23,HLA-A68:30,HLA-A74:01,HLA-B07:02,HLA-B07:08,HLA-B07:14,HLA-B07:96,HLA-B08:01,HLA-B08:05,HLA-B08:50,HLA-B13:02,HLA-B14:01,HLA-B14:02,HLA-B14:11,HLA-B15:01,HLA-B15:02,HLA-B15:03,HLA-B15:04,HLA-B15:05,HLA-B15:07,HLA-B15:08,HLA-B15:09,HLA-B15:10,HLA-B15:15,HLA-B15:16,HLA-B15:17,HLA-B15:20,HLA-B15:30,HLA-B15:31,HLA-B15:47,HLA-B18:01,HLA-B18:05,HLA-B27:02,HLA-B27:03,HLA-B27:05,HLA-B35:01,HLA-B35:02,HLA-B35:03,HLA-B35:04,HLA-B35:05,HLA-B35:06,HLA-B35:12,HLA-B35:14,HLA-B35:17,HLA-B35:18,HLA-B35:19,HLA-B35:20,HLA-B35:21 -f postalligmentproteins.faa -l 9 -inptype 0 -BA > HLA1NetMHCprediction2
+
+
+2. Concatenate the results with cat command.
+
+cat HLA1NetMHCprediction1 HLA1NetMHCprediction2 > HLASBandWBprediction
+
+3. Search with cat command  Stronger Binders " with "SB" in entirely predictions from netMHCpan 4.0 algorithm.
+
+ cat HLASBandWBprediction | grep "SB" > HLASBPrediction
+
+
+
+PART II.
+
+code to run in mhcflurry | HLA 1 binding prediccion.
+
+*commands of interest. 
+
+  --input-format {guess,csv,fasta}
+                        Format of input file. By default, it is guessed from
+                        the file extension.
+  --threshold-affinity THRESHOLD_AFFINITY
+                        Threshold if filtering by affinity. Default: 500
+  --threshold-affinity-percentile THRESHOLD_AFFINITY_PERCENTILE
+                        Threshold if filtering by affinity percentile.
+                        Default: 2.0
+
+9mersSBNet: full non redundancy sequences of 9 mers characterized than "Strong Binders", results from NetMHCpan 4.0 algorithm.
+
+
+1. Full code to run in mhcflurry | | HLA Class 1 binding prediccion.
+
+mhcflurry-predict-scan /home/propietario/Documentos/Repositorio/Archivos/Part2/9mersSBNet.faa --input-format fasta --threshold-affinity 100 --alleles HLA-A*01:01,HLA-A*01:02,HLA-A*02:01,HLA-A*02:02,HLA-A*02:04,HLA-A*02:05,HLA-A*02:06,HLA-A*02:11,HLA-A*02:12,HLA-A*02:13,HLA-A*02:17,HLA-A*02:19,HLA-A*02:22,HLA-A*02:24,HLA-A*03:01,HLA-A*11:01,HLA-A*23:01,HLA-A*24:02,HLA-A*24:03,HLA-A*24:06,HLA-A*24:14,HLA-A*25:01,HLA-A*26:01,HLA-A*29:01,HLA-A*29:02,HLA-A*30:01,HLA-A*30:02,HLA-A*31:01,HLA-A*31:12,HLA-A*32:01,HLA-A*33:01,HLA-A*33:03,HLA-A*33:18,HLA-A*34:02,HLA-A*36:01,HLA-A*66:01,HLA-A*66:02,HLA-A*68:01,HLA-A*68:02,HLA-A*68:03,HLA-A*68:05,HLA-A*68:06,HLA-A*68:23,HLA-A*68:30,HLA-A*74:01,HLA-B*07:02,HLA-B*07:08,HLA-B*07:14,HLA-B*07:96,HLA-B*08:01,HLA-B*08:05,HLA-B*08:50,HLA-B*13:02,HLA-B*14:01,HLA-B*14:02,HLA-B*14:11,HLA-B*15:01,HLA-B*15:02,HLA-B*15:03,HLA-B*15:04,HLA-B*15:05,HLA-B*15:07,HLA-B*15:08,HLA-B*15:09,HLA-B*15:10,HLA-B*15:15,HLA-B*15:16,HLA-B*15:17,HLA-B*15:20,HLA-B*15:30,HLA-B*15:31,HLA-B*15:47,HLA-B*18:01,HLA-B*18:05,HLA-B*27:02,HLA-B*27:03,HLA-B*27:05,HLA-B*35:01,HLA-B*35:02,HLA-B*35:03,HLA-B*35:04,HLA-B*35:05,HLA-B*35:06,HLA-B*35:12,HLA-B*35:14,HLA-B*35:17,HLA-B*35:18,HLA-B*35:19,HLA-B*35:20,HLA-B*35:21,HLA-B*35:23,HLA-B*35:24,HLA-B*35:30,HLA-B*35:31,HLA-B*35:43,HLA-B*35:44,HLA-B*35:68,HLA-B*37:01,HLA-B*38:01,HLA-B*39:01,HLA-B*39:02,HLA-B*39:03,HLA-B*39:04,HLA-B*39:05,HLA-B*39:06,HLA-B*39:08,HLA-B*39:09,HLA-B*39:11,HLA-B*39:12,HLA-B*39:13,HLA-B*40:01,HLA-B*40:02,HLA-B*40:03,HLA-B*40:04,HLA-B*40:05,HLA-B*40:08,HLA-B*40:09,HLA-B*40:10,HLA-B*40:11,HLA-B*40:16,HLA-B*40:89,HLA-B*41:01,HLA-B*41:02,HLA-B*42:01,HLA-B*42:02,HLA-B*44:02,HLA-B*44:03,HLA-B*44:11,HLA-B*44:45,HLA-B*45:01,HLA-B*48:01,HLA-B*48:03,HLA-B*49:01,HLA-B*50:01,HLA-B*51:01,HLA-B*51:08,HLA-B*51:10,HLA-B*51:24,HLA-B*51:46,HLA-B*52:01,HLA-B*53:01,HLA-B*56:02,HLA-B*57:01,HLA-B*57:03,HLA-B*58:01,HLA-B*58:02,HLA-B*78:02,HLA-B*81:01,HLA-B*82:01,HLA-C*01:02,HLA-C*01:06,HLA-C*02:02,HLA-C*02:10,HLA-C*03:02,HLA-C*03:03,HLA-C*03:04,HLA-C*03:05,HLA-C*04:01,HLA-C*04:03,HLA-C*04:15,HLA-C*05:01,HLA-C*06:02,HLA-C*07:01,HLA-C*07:02,HLA-C*07:05,HLA-C*08:01,HLA-C*08:02,HLA-C*08:03,HLA-C*12:03,HLA-C*14:02,HLA-C*15:02,HLA-C*15:03,HLA-C*15:05,HLA-C*15:09,HLA-C*16:01,HLA-C*16:02,HLA-C*17:01 --out Finalresults.csv
+
+Final results combined from "Final Results" from mhcflurry algorithm and " HLASBPrediction" from NetMHCpan 4.0 are used for the others approach about antigenic, allergenic and toxin properties describe in methodology.
+
+
+PART III.
+
+Full code to run in NetMHCpan 4.0 | | HLA 1 binding prediccion.
+*commands of interest. 
+
+ -a       DRB1_0101            Allele name
+ -f       data1.fasta          File name with input
+ -inptype                      Input type [0] FASTA [1] Peptide
+ [-l int]             15       Peptide length
+
+1. Intro full code for every unique HLA Class II identified in a separate way. 
+
+../netMHCII-2.3 -a DRB1_0101 -f 15length.faa -inptype 0 >P1
+../netMHCII-2.3 -a DRB1_0103 -f 15length.faa -inptype 0 >P2
+../netMHCII-2.3 -a DRB1_0301 -f 15length.faa -inptype 0 >P3
+../netMHCII-2.3 -a DRB1_0401 -f 15length.faa -inptype 0 >P4
+../netMHCII-2.3 -a DRB1_0402 -f 15length.faa -inptype 0 >P5
+../netMHCII-2.3 -a DRB1_0403 -f 15length.faa -inptype 0 >P6
+../netMHCII-2.3 -a DRB1_0404 -f 15length.faa -inptype 0 >P7
+../netMHCII-2.3 -a DRB1_0405 -f 15length.faa -inptype 0 >P8
+../netMHCII-2.3 -a DRB1_0701 -f 15length.faa -inptype 0 >P9
+../netMHCII-2.3 -a DRB1_0801 -f 15length.faa -inptype 0 >P10
+../netMHCII-2.3 -a DRB1_0802 -f 15length.faa -inptype 0 >P11
+../netMHCII-2.3 -a DRB1_0901 -f 15length.faa -inptype 0 >P12
+../netMHCII-2.3 -a DRB1_1001 -f 15length.faa -inptype 0 >P13
+../netMHCII-2.3 -a DRB1_1101 -f 15length.faa -inptype 0 >P14
+../netMHCII-2.3 -a DRB1_1201 -f 15length.faa -inptype 0 >P15
+../netMHCII-2.3 -a DRB1_1301 -f 15length.faa -inptype 0 >P16
+../netMHCII-2.3 -a DRB1_1302 -f 15length.faa -inptype 0 >P17
+../netMHCII-2.3 -a DRB1_1501 -f 15length.faa -inptype 0 >P18
+../netMHCII-2.3 -a DRB1_1602 -f 15length.faa -inptype 0 >P19
+
+2. Concatenate every HLA class II individual result in a full result list with cat command.
+
+cat P1 P2 P3 P4 P5 P6 P7 P8 P9 P10 P11 P12 P13 P14 P15 P16 P17 P18 P19 > fullSBandWBbinders
+
+3. Realize a filter and only select the "Strong binder" ones.
+
+cat fullSBandWBbinders | grep "SB" > SBclass2
+
+The final results in "SBclass2", was next characterized in other predictive approaches, as antigenicity, allergenicity and toxicity described in methodology section.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
